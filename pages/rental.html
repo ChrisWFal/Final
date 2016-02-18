@@ -1,0 +1,21 @@
+<div id=back>
+    <div id='inputs'>
+        <h1>Rentals</h1>
+        <br>
+        <p>Destination</p>
+        <input type="text" ng-model='destination'>
+        <br>
+        <button type="button" ng-click="rentalInfo()">Search for caxr rentals</button>
+        <br>
+
+
+        <h4>All of the car rentals near {{destination}}</h4>
+
+    </div>
+    <div id='resultList'>
+        <div class='col-xs-12 col-sm-6 col-lg-4 col-md-3' id='arrayDiv' ng-repeat="rental in rentals track by $index">
+            Airport : {{rental.airport}} | Provider: {{rental.provider.company_name}} | Postal code of location: {{rental.address.postal_code}} | type of car: {{rental.cars[0].vehicle_info.category}}
+
+        </div>
+    </div>
+</div>
